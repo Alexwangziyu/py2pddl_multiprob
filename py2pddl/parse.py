@@ -26,7 +26,7 @@ def parse(infile: str,
     #importlib.reload(module)  # there might be a better way for this
 
     problem_name = [attr for attr in dir(module)
-                    if attr.endswith("Problem")][0]
+                    if attr[:-1].endswith("Problem")][0]
     Problem = getattr(module, problem_name)
 
     p = Problem()
